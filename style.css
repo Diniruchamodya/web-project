@@ -186,7 +186,11 @@ a {
 
 
 .home1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
+    position: relative;
     min-height: 100vh;
     /*view point hight*/
     background-color: var(--main-color);
@@ -202,26 +206,20 @@ a {
 }
 
 #myVideo {
+    z-index: 1px;
     opacity: 15%;
-    background-size: cover;
-    background-position: center;
-    left: 0;
-    top: 0;
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
-
-
-
 }
 
 .home-text {
-    justify-content: center;
     z-index: 1;
     position: relative;
-    margin-top: -600px;
+    margin-top: 0;
     text-align: center;
+    padding: 2rem;
 
 
 
@@ -239,10 +237,6 @@ a {
     text-shadow: #000000 2px 3px 6px;
 
 
-
-
-
-
 }
 
 .home-text p {
@@ -258,7 +252,6 @@ a {
     padding-bottom: 20px;
 
 
-
 }
 
 
@@ -272,7 +265,6 @@ a {
     font-weight: 500;
     font-size: 1rem;
     font-family: "Funnel Sans", sans-serif;
-    position: relative;
     cursor: pointer;
     justify-items: center;
     transition: 0.5s;
@@ -326,13 +318,26 @@ a {
         left: -100%;
         top: 0;
         background-color: var(--main-color);
-        width: 100%;
+        width: 50%;
         height: 100%;
         padding: 6rem 3.5rem 4.5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         transition: left .4s;
+
+    }
+
+
+
+    .search-icon {
+        margin-top: 30px;
+        margin-left: 2px;
+    }
+
+    .cart-icon {
+        margin-top: 30px;
+        margin-left: 2px;
     }
 
     .nav__item {
@@ -432,10 +437,6 @@ a {
 }
 
 
-
-
-
-
 /* Show menu */
 .show-menu {
     left: 0;
@@ -446,7 +447,6 @@ a {
     visibility: visible;
     transform: translateX(0);
 }
-
 
 
 
@@ -490,105 +490,98 @@ a {
 }
 
 
-
-/* Styles for screens smaller than 768px */
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-
-
-    body {
-        background-size: cover;
-        /* Ensures the background image covers the viewport */
-        background-position: center;
-        /* Keeps background centered */
-        background-attachment: fixed;
-        /* Ensures it moves seamlessly with the page */
+    .home1 {
+        justify-content: center;
+        padding: 0;
     }
 
-    /* Adjust video to fit within the viewport */
     #myVideo {
         width: 100%;
-        /* Video spans the full width of the viewport */
-        height: auto;
-        /* Height scales automatically to maintain aspect ratio */
-        object-fit: cover;
-        /* Ensures the video covers its container */
-        background-position: center;
-        /* Centers the video focus */
-        margin-top: 0;
+        height: 100%;
     }
 
-    /* Section containing video and text adjustments */
-    .home1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* Center-aligns content */
-        justify-content: center;
-        min-height: 100vh;
-        /* Ensures the section fills the viewport */
-        margin: 0;
-        /* No extra spacing */
-        padding: 0;
-        /* No extra spacing */
+    .home-text {
+        padding: 1rem;
     }
 
+    .home-text h1 {
+        font-size: 5rem;
+    }
 
-    /* Hide the logo */
+    .home-text p {
+        font-size: 1rem;
+    }
+
     .nav-logo {
-        display: none;
+        height: 70px;
+        /* Adjust size for smaller screens */
+        width: 80px;
+        /* Adjust size for smaller screens */
+        position: fixed;
+        top: 10px;
+        left: 10px;
     }
 
-    /* Hide all h1 elements */
-    h1 {
-        display: none;
-    }
-
-    /* Hide all paragraphs */
-    p {
-        display: none;
-    }
-
-    /* Adjust the navigation menu */
-    .nav__menu {
-        padding: 4rem 2rem;
-    }
-
-    .nav__list {
-        row-gap: 2rem;
-        /* Reduce gaps between menu items */
-    }
-
-    .nav__link {
+    .btn {
         font-size: 0.9rem;
-        /* Reduce text size for navigation links */
+        padding: 8px 15px;
     }
 
-    /* Resize and center navigation toggle button */
     .nav__toggle {
         font-size: 1.3rem;
         position: fixed;
         right: 1.5rem;
         top: 1rem;
     }
+}
 
+@media screen and (max-width: 480px) {
+    .home1 {
+        justify-content: center;
+        padding: 0;
+    }
 
+    #myVideo {
+        width: 100%;
+        height: 100%;
+    }
 
-    /* Adjust home section text alignment and margins */
     .home-text {
-        margin-top: 0;
         padding: 1rem;
-        text-align: center;
+    }
+
+    .home-text h1 {
+        font-size: 4rem;
+    }
+
+    .home-text p {
+        font-size: 0.9rem;
+    }
+
+    .nav-logo {
+        height: 60px;
+        /* Adjust size for smaller screens */
+        width: 70px;
+        /* Adjust size for smaller screens */
+        position: fixed;
+        top: 10px;
+        left: 10px;
     }
 
     .btn {
-        font-size: 0.9rem;
-        /* Adjust button font size */
-        padding: 8px 15px;
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .nav__toggle {
+        font-size: 1.2rem;
+        position: fixed;
+        right: 1rem;
+        top: 1rem;
     }
 }
-
-
-
 
 
 
@@ -1196,17 +1189,17 @@ button {
     }
 
     .card h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         /* Further reduce title size */
     }
 
     .card p {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         /* Smaller text */
     }
 
     button {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         /* Adjust button size */
         padding: 8px 15px;
         /* Adjust padding for buttons */
