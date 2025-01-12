@@ -129,4 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+    /* preloader */
+    var loader = document.getElementById("preloader"); // Use the ID without the period
+    window.addEventListener("load", function () {
+        loader.style.display = "none";
+    });
+
+
 });

@@ -1682,3 +1682,26 @@ footer {
         /* Align icons vertically for small screens */
     }
 }
+
+
+
+
+
+
+/*..................... preloader...................... */
+#preloader {
+    background: white url(images/Coffee\ cup.gif) no-repeat center;
+    background-size: 6%;
+    height: 100vh;
+    width: 100%;
+    z-index: 200;
+    position: fixed;
+
+}
+
+@media (max-width:480px) {
+
+    #preloader {
+        background-size: 8%;
+    }
+}
