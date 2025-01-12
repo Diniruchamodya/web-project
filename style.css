@@ -1699,6 +1699,10 @@ footer {
 
 }
 
+.footer-container iframe {
+    display: none;
+}
+
 @media (max-width:480px) {
 
     #preloader {
