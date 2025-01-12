@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.getElementById("nav-toggle");
-    const navlogo = document.getElementById("nav-logo");
     const navClose = document.getElementById("nav-close");
     const navMenu = document.getElementById("nav-menu");
+    const navlogo = document.getElementById("nav-logo");
     const searchIcon = document.getElementById("search-icon");
     const cartIcon = document.querySelector(".cart-icon");
 

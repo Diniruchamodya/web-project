@@ -93,6 +93,7 @@ a {
 .nav__item {
     padding: 0 10px;
     margin-left: 20px;
+
 }
 
 .nav-logo {
@@ -138,6 +139,7 @@ a {
 .search-icon .bx.bx:hover {
     color: #edeae3;
 }
+
 
 
 .cart-icon {
@@ -234,7 +236,7 @@ a {
     margin: 1rem;
     text-align: center;
     cursor: pointer;
-    text-shadow: #000000 2px 3px 6px;
+    text-shadow: #000000 1px 3px 2px;
 
 
 }
@@ -280,10 +282,6 @@ a {
 
 
 
-
-
-
-
 .home-img {
     position: static;
     width: 100vh;
@@ -294,21 +292,6 @@ a {
 
 }
 
-/*text typing*/
-/*
-@keyframes cursor {
-    50% {
-        border-color: transparent;
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-    */
-
 
 
 /* Navigation for mobile devices */
@@ -318,9 +301,10 @@ a {
         left: -100%;
         top: 0;
         background-color: var(--main-color);
-        width: 50%;
+        width: 65%;
         height: 100%;
-        padding: 6rem 3.5rem 4.5rem;
+        padding: 10px;
+        margin-top: 40px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -328,7 +312,18 @@ a {
 
     }
 
+    .nav-logo {
+        display: flex;
+        align-items: left;
+        height: 90px;
+        width: 100px;
+        border: none;
+        margin-left: -100px;
+        margin-top: 10px;
 
+
+
+    }
 
     .search-icon {
         margin-top: 30px;
@@ -336,8 +331,11 @@ a {
     }
 
     .cart-icon {
-        margin-top: 30px;
+        margin-top: -25px;
         margin-left: 2px;
+        margin-bottom: 40px;
+
+
     }
 
     .nav__item {
@@ -393,11 +391,16 @@ a {
     opacity: 0;
     visibility: hidden;
     transition: opacity .4s, visibility .4s;
+    padding: -30px;
 }
 
 .nav__link span {
     position: relative;
     transition: margin .4s;
+    font-size: 18px;
+    margin-top: -20px;
+
+
 }
 
 .nav__link span::after {
@@ -535,6 +538,8 @@ a {
         right: 1.5rem;
         top: 1rem;
     }
+
+
 }
 
 @media screen and (max-width: 480px) {
@@ -560,14 +565,12 @@ a {
         font-size: 0.9rem;
     }
 
-    .nav-logo {
-        height: 60px;
-        /* Adjust size for smaller screens */
-        width: 70px;
-        /* Adjust size for smaller screens */
-        position: fixed;
-        top: 10px;
-        left: 10px;
+
+    @media (max-width: 480px) {
+        .social-icons {
+            display: block;
+            gap: 15px;
+        }
     }
 
     .btn {
@@ -581,6 +584,8 @@ a {
         right: 1rem;
         top: 1rem;
     }
+
+
 }
 
 
@@ -653,6 +658,22 @@ a {
 
 .social-icons a img:hover {
     transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
 }
 
 
@@ -1357,6 +1378,8 @@ button:hover {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+
+
     }
 
     .contact-info,
@@ -1378,17 +1401,24 @@ button:hover {
     .contact-container {
         padding: 15px;
         box-shadow: none;
+
     }
 
     .contact-image {
         position: static;
         transform: none;
 
+
     }
 
     button {
         width: 100%;
         padding: 12px;
+    }
+
+    ul .social-icons {
+        display: inline-block;
+
     }
 }
 
@@ -1426,9 +1456,15 @@ button:hover {
         box-shadow: none;
     }
 
+    ul .social-icons {
+        display: inline-block;
+    }
+
     button {
         font-size: 0.9rem;
     }
+
+
 }
 
 
