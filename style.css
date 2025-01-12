@@ -22,9 +22,7 @@
     --font-regular: 400;
     --font-medium: 500;
 
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
+
 }
 
 /*========== Responsive typography ==========*/
@@ -74,7 +72,7 @@ a {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: var(--z-fixed);
+    z-index: 100;
     background-color: var(--main-color);
 
 }
@@ -558,7 +556,7 @@ a {
     }
 
     .home-text h1 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .home-text p {
@@ -647,6 +645,7 @@ a {
 
 .social-icons {
     display: flex;
+    flex-direction: row;
     gap: 15px;
 }
 
@@ -654,6 +653,7 @@ a {
     width: 30px;
     height: 30px;
     transition: transform 0.3s;
+
 }
 
 .social-icons a img:hover {
@@ -664,15 +664,13 @@ a {
 @media (max-width: 768px) {
 
     .social-icons {
-        display: flex;
-        gap: 15px;
+        flex-direction: row;
     }
 }
 
 @media (max-width: 480px) {
     .social-icons {
-        display: flex;
-        gap: 15px;
+        flex-direction: row;
     }
 }
 
@@ -1693,7 +1691,7 @@ footer {
     }
 
     .social-icons {
-        flex-direction: column;
+        flex-direction: row;
         /* Align icons vertically for small screens */
     }
 }
