@@ -75,14 +75,22 @@ const swiper = new Swiper('.swiper-container', {
         disableOnInteraction: false, // Continue autoplay after user interaction
     },
     breakpoints: {
-        // Mobile screens
-        768: {
+        0: {
             slidesPerView: 1, // Show 1 slide at a time on smaller screens
+            spaceBetween: 10,
+        },
+        // Mobile screens
+        480: {
+            slidesPerView: 1, // Show 1 slide at a time on smaller screens
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 2, // Show 1 slide at a time on smaller screens
             spaceBetween: 10,
         },
         // Tablet screens
         1024: {
-            slidesPerView: 2, // Show 2 slides at a time on medium screens
+            slidesPerView: 3, // Show 2 slides at a time on medium screens
             spaceBetween: 15,
         },
         // Default for larger screens
