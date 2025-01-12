@@ -138,3 +138,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+
+
+
+// Add this script in script.js
+document.getElementById('search-icon').addEventListener('click', function () {
+    document.getElementById('search-bar').classList.toggle('show-search');
+});
+
+let cartCount = 0;
+function addToCart() {
+    cartCount++;
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+// Adding event listeners for "Menu" and "Product" links 
+document.querySelectorAll('[data-add-to-cart]').forEach(function (item) {
+    item.addEventListener('click', function () {
+        addToCart();
+    });
+});

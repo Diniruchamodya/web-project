@@ -791,6 +791,7 @@ button:active {
 
 #menu {
     background-color: white;
+    padding-bottom: 30px;
 }
 
 h2 {
@@ -1721,4 +1722,69 @@ footer {
     #preloader {
         background-size: 10%;
     }
+}
+
+
+
+
+
+
+/* Add this CSS to your style.css file */
+/* Existing CSS from your previous message */
+/* Add this CSS to your style.css file */
+.search-bar {
+    display: none;
+    margin-left: 20px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: var(--text-color);
+    color: var(--main-color);
+}
+
+/* Existing CSS */
+/* Add CSS for the cart count */
+.cart-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart-icon i {
+    font-size: 1.5rem;
+    background-color: #e3874f;
+    padding: 3px;
+    border-radius: 8px;
+    color: var(--main-color);
+}
+
+.cart-icon span {
+    margin-left: 5px;
+    font-size: 1rem;
+    background-color: var(--text-color);
+    color: var(--main-color);
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* Show search bar when search icon is clicked */
+.show-search .search-bar {
+    display: flex;
 }
