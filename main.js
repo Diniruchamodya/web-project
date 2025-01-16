@@ -21,19 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Handle search icon click
-    if (searchIcon) {
-        searchIcon.addEventListener("click", () => {
-            alert("Search here.");
-        });
-    }
 
-    // Handle cart icon click
-    if (cartIcon) {
-        cartIcon.addEventListener("click", () => {
-            alert("add to cart");
-        });
-    }
 
 
 
@@ -53,6 +41,28 @@ document.addEventListener("DOMContentLoaded", () => {
         } u
     });
 });
+
+
+
+/*   menu     */
+// Sample code to simulate adding items to a cart
+const cart = [];
+
+function addToCart(item) {
+    cart.push(item);
+    alert(item + " has been added to your cart!");
+    console.log(cart);  // For testing purposes
+}
+
+// Attach addToCart function to each "Add to Cart" button
+document.querySelectorAll('button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const pizzaName = button.parentElement.querySelector('h3').innerText;
+        addToCart(pizzaName);
+    });
+});
+
+
 
 
 /* customer */
@@ -160,3 +170,64 @@ document.querySelectorAll('[data-add-to-cart]').forEach(function (item) {
         addToCart();
     });
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const closeCartButton = document.getElementById('close-cart');
+    const cartContent = document.querySelector('.cart-content');
+    let cartCount = 0;
+
+    function updateCartCount() {
+        document.getElementById('cart-count').textContent = cartCount;
+    }
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const item = event.target.closest('.menu-item');
+            const itemName = item.querySelector('h3').textContent;
+            const itemPrice = item.querySelector('.price font').textContent;
+
+            // Add item to cart logic
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <h4>${itemName}</h4>
+                <p>${itemPrice}</p>
+                <button class="remove-item">Remove</button>
+            `;
+            cartContent.appendChild(cartItem);
+
+            // Increment cart count and show cart sidebar
+            cartCount++;
+            updateCartCount();
+            cartSidebar.classList.add('show');
+        });
+    });
+
+    cartContent.addEventListener('click', function (event) {
+        if (event.target.classList.contains('remove-item')) {
+            const cartItem = event.target.closest('.cart-item');
+            cartContent.removeChild(cartItem);
+
+            // Decrement cart count
+            cartCount--;
+            updateCartCount();
+
+            // If no items are left in the cart, hide the sidebar
+            if (cartContent.children.length === 0) {
+                cartSidebar.classList.remove('show');
+            }
+        }
+    });
+
+    closeCartButton.addEventListener('click', function () {
+        cartSidebar.classList.remove('show');
+    });
+});
+
+

@@ -99,7 +99,18 @@
             <div class="nav__toggle" id="nav-toggle">
                 <i class='bx bx-menu'></i>
             </div>
+
+            <div id="cart-sidebar" class="cart-sidebar">
+                <div class="cart-header">
+                    <button id="close-cart">&times;</button>
+                </div>
+                <div class="cart-content">
+                    <!-- Cart items will be added here dynamically -->
+                </div>
+            </div>
+
         </nav>
+
 
     </header>
 
@@ -118,7 +129,6 @@
                 <p>Start Your Day with Fresh Coffee</p><br>
                 <a href="#menu" class="btn" target="_blank">Order Now</a>
             </div>
-
 
         </div>
 
@@ -186,7 +196,7 @@
                         <font face="Lucida Calligraphy">Rs.430</font>
                     </p>
 
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -199,7 +209,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.480</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -212,7 +222,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.630</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -225,7 +235,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.550</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
 
@@ -243,7 +253,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.550</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -256,7 +266,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.650</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -269,7 +279,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.430</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -282,7 +292,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.710</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -294,7 +304,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.1500</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
 
@@ -311,7 +321,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.550</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
 
 
                 </div>
@@ -326,7 +336,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.350</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -338,7 +348,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.450</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -351,7 +361,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.350</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -364,7 +374,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.550</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
             <div class="menu-item">
@@ -377,7 +387,7 @@
                     <p class="price">
                         <font face="Lucida Calligraphy">Rs.650</font>
                     </p>
-                    <button>Add to cart</button>
+                    <button class="add-to-cart">Add to cart</button>
                 </div>
             </div>
         </section>
@@ -702,22 +712,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js">
 
-        // Sample code to simulate adding items to a cart
-        const cart = [];
 
-        function addToCart(item) {
-            cart.push(item);
-            alert(item + " has been added to your cart!");
-            console.log(cart);  // For testing purposes
-        }
-
-        // Attach addToCart function to each "Add to Cart" button
-        document.querySelectorAll('button').forEach((button, index) => {
-            button.addEventListener('click', () => {
-                const pizzaName = button.parentElement.querySelector('h3').innerText;
-                addToCart(pizzaName);
-            });
-        });
 
 
 

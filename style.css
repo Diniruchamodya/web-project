@@ -588,6 +588,74 @@ a {
 
 
 
+.cart-sidebar {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+
+}
+
+.cart-sidebar.show {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 10px;
+}
+
+.cart-content {
+    margin-top: 20px;
+}
+
+#close-cart {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.cart-item h4 {
+    margin: 0;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+
+
+
 /********************************************ABout******************************************/
 
 .about-section {
@@ -769,6 +837,10 @@ a {
 }
 
 button {
+    margin-top: 10px;
+}
+
+.add-to-cart {
     background-color: #e2e2e2;
     color: #27120A;
     padding: 10px 20px;
@@ -780,8 +852,8 @@ button {
     margin-top: 10px;
 }
 
-button:hover,
-button:active {
+.add-to-cart:hover,
+.add-to-cart:active {
     background-color: #00000068;
     color: #ffffff;
 
@@ -1744,7 +1816,7 @@ footer {
 }
 
 .add-to-cart {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 1rem;
     padding: 10px 20px;
     background-color: var(--main-color);
@@ -1776,12 +1848,14 @@ footer {
 }
 
 .cart-icon span {
-    margin-left: 5px;
-    font-size: 1rem;
-    background-color: var(--text-color);
+    margin-left: -8px;
+    margin-top: -30px;
+    font-size: 10px;
+    background-color: var(--secondary-color);
     color: var(--main-color);
     padding: 2px 5px;
-    border-radius: 50%;
+    border-radius: 80%;
+
 }
 
 /* Show search bar when search icon is clicked */
