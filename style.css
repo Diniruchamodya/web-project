@@ -1,38 +1,38 @@
-/*=============== GOOGLE FONTS ===============*/
+/********************* GOOGLE FONTS *********************/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
+/********************** VARIABLES CSS **********************/
 :root {
     --header-height: 3.5rem;
 
-    /*========== Colors ==========*/
+    /********************** Colors **********************/
     /*Color mode HSL(hue, saturation, lightness)*/
     --white-color: hsl(0, 0%, 100%);
     --main-color: #27120A;
     --secondary-color: #edeae3;
     --text-color: #E6D1A6;
 
-    /*========== Font and typography ==========*/
+    /********************** Font and typography **********************/
     /*.5rem = 8px | 1rem = 16px ...*/
     --body-font: "Montserrat Alternates", sans-serif;
     --h1-font-size: 1.5rem;
     --normal-font-size: .938rem;
 
-    /*========== Font weight ==========*/
+    /********************** Font weight **********************/
     --font-regular: 400;
     --font-medium: 500;
 
 
 }
 
-/*========== Responsive typography ==========*/
+/********************** Responsive typography **********************/
 @media screen and (min-width: 1150px) {
     :root {
         --normal-font-size: 1rem;
     }
 }
 
-/*=============== BASE ===============*/
+/********************** BASE **********************/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -60,13 +60,13 @@ a {
     text-decoration: none;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
+/*************** REUSABLE CSS CLASSES ****************/
 .container {
     max-width: 1120px;
     margin-inline: 1.5rem;
 }
 
-/*=============== HEADER & NAV ===============*/
+/********************** HEADER & NAV **********************/
 .header {
     position: fixed;
     width: 100%;
@@ -102,6 +102,7 @@ a {
     border: none;
     margin-left: -100px;
     margin-top: 10px;
+
 
 
 
@@ -184,29 +185,24 @@ a {
 
 
 
-
 .home1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
     position: relative;
+    /**********view point hight************/
     min-height: 100vh;
-    /*view point hight*/
-    background-color: var(--main-color);
+    /**********avoid the repeat of the bg img**********/
     background-repeat: no-repeat;
-    /* avoid the repeat of the bg img*/
+    /*********cover the whole page and fit the body*********/
     background-size: cover;
-    /*cover the whole page and fit the body*/
     background-position: center;
     align-items: center;
-
-
 
 }
 
 #myVideo {
-    z-index: 1px;
     opacity: 15%;
     position: absolute;
     width: 100%;
@@ -221,8 +217,6 @@ a {
     text-align: center;
     padding: 2rem;
 
-
-
 }
 
 .home-text h1 {
@@ -236,7 +230,6 @@ a {
     cursor: pointer;
     text-shadow: #000000 1px 3px 2px;
 
-
 }
 
 .home-text p {
@@ -246,9 +239,6 @@ a {
     text-align: center;
     font-weight: 100px;
     margin-top: 0.4rem;
-    /*   border-right: 5px solid;
-    white-space: nowrap;  */
-    animation: typing 2s steps(34), cursor .4s step-end infinite alternate;
     padding-bottom: 20px;
 
 
@@ -280,19 +270,7 @@ a {
 
 
 
-.home-img {
-    position: static;
-    width: 100vh;
-    height: 100vh;
-    z-index: 200;
-    margin-right: 25%;
-
-
-}
-
-
-
-/* Navigation for mobile devices */
+/*********** Navigation for mobile devices **********/
 @media screen and (max-width: 1150px) {
     .nav__menu {
         position: fixed;
@@ -302,13 +280,14 @@ a {
         width: 65%;
         height: 100%;
         padding: 10px;
-        margin-top: 40px;
+        margin-top: 65px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         transition: left .4s;
 
     }
+
 
     .nav-logo {
         display: flex;
@@ -318,7 +297,6 @@ a {
         border: none;
         margin-left: -100px;
         margin-top: 10px;
-
 
 
     }
@@ -452,8 +430,6 @@ a {
 
 
 
-
-
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (min-width: 1150px) {
@@ -462,8 +438,9 @@ a {
     }
 
     .nav {
-        height: calc(var(--header-height) + 2rem);
+        height: calc(var(--header-height) + 2.2rem);
     }
+
 
     .nav__toggle,
     .nav__close {
@@ -490,6 +467,37 @@ a {
     }
 }
 
+@media screen and (max-width: 1102px) {
+
+    .nav {
+        height: 4.2rem;
+    }
+
+    .nav-logo {
+
+        display: flex;
+        align-items: left;
+        /* Adjusted for proper alignment */
+        height: auto;
+        /* Let the height adjust naturally */
+        width: auto;
+        /* Remove fixed width */
+        margin: 10px auto;
+        /* Center and add consistent margin */
+        justify-content: left;
+        /* Center align when needed */
+    }
+
+    .nav-logo img {
+        width: 7%;
+        /* Ensure image scales within container */
+        height: auto;
+        /* Maintain aspect ratio */
+
+    }
+
+
+}
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
@@ -502,6 +510,11 @@ a {
         width: 100%;
         height: 100%;
     }
+
+    .nav {
+        height: 4.5rem;
+    }
+
 
     .home-text {
         padding: 1rem;
@@ -516,29 +529,43 @@ a {
     }
 
     .nav-logo {
-        height: 70px;
-        /* Adjust size for smaller screens */
-        width: 80px;
-        /* Adjust size for smaller screens */
-        position: fixed;
-        top: 10px;
-        left: 10px;
+        height: auto;
+        /* Let the height adjust naturally */
+        width: auto;
+        /* Remove fixed width */
+        margin-left: 0;
+        /* Adjust margin for better alignment */
+        margin-top: 8px;
+        /* Consistent margin */
+        justify-content: left;
+        /* Center align when needed */
     }
 
-    .btn {
-        font-size: 0.9rem;
-        padding: 8px 15px;
+    .nav-logo img {
+        width: 60px;
+        /* Scale the logo down by 50% */
+        height: auto;
+        /* Maintain aspect ratio */
     }
-
-    .nav__toggle {
-        font-size: 1.3rem;
-        position: fixed;
-        right: 1.5rem;
-        top: 1rem;
-    }
-
-
 }
+
+
+
+.btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+.nav__toggle {
+    font-size: 1.3rem;
+    position: fixed;
+    right: 1.5rem;
+    top: 1rem;
+}
+
+
+
+
 
 @media screen and (max-width: 480px) {
     .home1 {
@@ -546,10 +573,36 @@ a {
         padding: 0;
     }
 
+    .nav {
+        height: 4.5rem;
+    }
+
     #myVideo {
         width: 100%;
         height: 100%;
     }
+
+    .nav-logo {
+        height: auto;
+        /* Let the height adjust naturally */
+        width: auto;
+        /* Remove fixed width */
+        margin-left: 0;
+        /* Adjust margin for better alignment */
+        margin-top: 8px;
+        /* Slight margin adjustment */
+        justify-content: left;
+        /* Center align when needed */
+    }
+
+    .nav-logo img {
+        width: 60px;
+        /* Scale the logo down by 30% */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+
 
     .home-text {
         padding: 1rem;
@@ -634,6 +687,10 @@ a {
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid var(--text-color);
+}
+
+.cart-item menu-item img {
+    margin: 0;
 }
 
 .cart-item h4 {
@@ -1795,9 +1852,6 @@ footer {
         background-size: 10%;
     }
 }
-
-
-
 
 
 
