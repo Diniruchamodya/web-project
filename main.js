@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
     // Close men when clicking outside
     document.addEventListener("click", (event) => {
         const isClickInside = navMenu.contains(event.target) || navToggle.contains(event.target);
