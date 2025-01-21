@@ -149,12 +149,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-// Add this script in script.js
+/****search bar display when click the search icon ******/
 document.getElementById('search-icon').addEventListener('click', function () {
-    document.getElementById('search-bar').classList.toggle('show-search');
+    var searchBar = document.getElementById('search-bar');
+    if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+        searchBar.style.display = 'flex';
+        setTimeout(() => { searchBar.style.opacity = '1'; }, 10);
+    } else {
+        searchBar.style.opacity = '0';
+        setTimeout(() => { searchBar.style.display = 'none'; }, 500);
+    }
 });
+
+
 
 let cartCount = 0;
 function addToCart() {
@@ -172,7 +179,7 @@ document.querySelectorAll('[data-add-to-cart]').forEach(function (item) {
 
 
 
-
+/*****adding and removing the addto cart menu items*******/
 document.addEventListener("DOMContentLoaded", function () {
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const cartSidebar = document.getElementById('cart-sidebar');

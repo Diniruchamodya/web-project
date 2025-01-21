@@ -138,6 +138,29 @@ a {
 }
 
 
+/*   search bar  */
+.search-bar {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 90px;
+    right: -90px;
+
+}
+
+.search-bar input {
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Show search bar when search icon is clicked */
+.show-search .search-bar {
+    display: flex;
+    opacity: 1;
+}
+
 
 .cart-icon {
     cursor: pointer;
@@ -634,6 +657,11 @@ a {
         top: 1rem;
     }
 
+    .search-bar {
+        margin-top: 448px;
+        margin-right: 150px;
+
+    }
 
 }
 
@@ -1868,20 +1896,12 @@ footer {
 
 
 
-/* Add this CSS to your style.css file */
-/* Existing CSS from your previous message */
-/* Add this CSS to your style.css file */
-.search-bar {
-    display: none;
-    margin-left: 20px;
-}
 
-.search-bar input {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
 
+
+
+
+/* add to cart part */
 .add-to-cart {
     margin-top: 10px;
     font-size: 1rem;
@@ -1923,9 +1943,4 @@ footer {
     padding: 2px 5px;
     border-radius: 80%;
 
-}
-
-/* Show search bar when search icon is clicked */
-.show-search .search-bar {
-    display: flex;
 }
