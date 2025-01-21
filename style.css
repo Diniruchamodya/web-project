@@ -659,12 +659,12 @@ a {
 
     .search-bar {
         margin-top: -115px;
-        margin-right: -50px;
-
-
-
+        margin-right: -40px;
     }
 
+    .search-bar input {
+        padding: 2px;
+    }
 }
 
 
