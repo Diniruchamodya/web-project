@@ -658,8 +658,10 @@ a {
     }
 
     .search-bar {
-        margin-top: 448px;
-        margin-right: 150px;
+        margin-top: -115px;
+        margin-right: -50px;
+
+
 
     }
 
