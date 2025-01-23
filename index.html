@@ -12,6 +12,7 @@
     <title>Sweet Coffee Shop</title>
 
     <!--------Add Favicon------->
+    <link rel="icon" type="image/png" href="images/coffee logo.png">
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -408,19 +409,19 @@
                 <div class="product-card">
                     <h2 class="product-name">ARABICA COFFEE BEANS</h2>
                     <img src="images/p1.png" alt="Arabica Coffee Beans" class="product-image">
-                    <p class="product-price">$16.00</p>
+                    <p class="product-price">Rs.4000 /=</p>
                     <button class="add-to-cart">ADD TO CART</button>
                 </div>
                 <div class="product-card">
                     <h2 class="product-name">CAFE BOTERO</h2>
                     <img src="images/p2.png" alt="Cafe Botero" class="product-image">
-                    <p class="product-price">$28.00</p>
+                    <p class="product-price">Rs.8000 /=</p>
                     <button class="add-to-cart">ADD TO CART</button>
                 </div>
                 <div class="product-card">
                     <h2 class="product-name">PATCH ROAST COFFEE</h2>
                     <img src="images/p3.png" alt="Patch Roast Coffee" class="product-image">
-                    <p class="product-price">$15.00</p>
+                    <p class="product-price">Rs.4500 /=</p>
                     <button class="add-to-cart">ADD TO CART</button>
                 </div>
 
@@ -428,23 +429,41 @@
                 <div class="product-card">
                     <h2 class="product-name">AFFOGATO ESPRESSO</h2>
                     <img src="images/p4.png" alt="Affogato Espresso" class="product-image">
-                    <p class="product-price">$9.25</p>
+                    <p class="product-price">Rs.2000 /=</p>
                     <button class="add-to-cart">ADD TO CART</button>
                 </div>
                 <div class="product-card">
                     <h2 class="product-name">CAFE CUBANO</h2>
                     <img src="images/p5.png" alt="Cafe Cubano" class="product-image">
-                    <p class="product-price">$15.99</p>
+                    <p class="product-price">Rs.4250 /=</p>
                     <button class="add-to-cart">ADD TO CART</button>
                 </div>
                 <div class="product-card">
                     <h2 class="product-name">PRESTO COFFEE</h2>
                     <img src="images/p6.png" alt="Presto Coffee" class="product-image">
-                    <p class="product-price">$16.00</p>
+                    <p class="product-price">Rs.4500 /=</p>
                     <button class="add-to-cart">ADD TO CART</button>
                 </div>
             </div>
         </div>
+
+        <!-- add to cart information slide part -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Product Information</h2>
+        <form id="productForm">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" readonly><br><br>
+            <label for="productPrice">Price:</label>
+            <input type="text" id="productPrice" name="productPrice" readonly><br><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
     </section>
 
 

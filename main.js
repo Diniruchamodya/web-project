@@ -61,6 +61,47 @@ document.querySelectorAll('button').forEach((button, index) => {
 });
 
 
+// product add to card information part //
+
+// JavaScript to handle modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('productModal');
+    const span = document.getElementsByClassName('close')[0];
+
+    // Function to open the modal
+    function openModal(productName, productPrice) {
+        document.getElementById('productName').value = productName;
+        document.getElementById('productPrice').value = productPrice;
+        modal.style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // Add event listener to close modal when clicking on <span> (x)
+    span.addEventListener('click', closeModal);
+
+    // Add event listener to close modal when clicking outside the modal
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Add event listeners to all 'Add to Cart' buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productCard = this.parentElement;
+            const productName = productCard.querySelector('.product-name').textContent;
+            const productPrice = productCard.querySelector('.product-price').textContent;
+            openModal(productName, productPrice);
+        });
+    });
+});
+
+
 
 
 /* customer */
@@ -234,5 +275,11 @@ document.addEventListener("DOMContentLoaded", function () {
         cartSidebar.classList.remove('show');
     });
 });
+
+
+
+
+
+
 
 
