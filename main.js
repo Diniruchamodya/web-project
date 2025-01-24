@@ -44,21 +44,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /*   menu     */
 // Sample code to simulate adding items to a cart
-const cart = [];
+document.addEventListener('DOMContentLoaded', function() {
+    const cart = [];
 
-function addToCart(item) {
-    cart.push(item);
-    alert(item + " has been added to your cart!");
-    console.log(cart);  // For testing purposes
-}
+    function addToCart(item) {
+        cart.push(item);
+        alert(item + " has been added to your cart!");
+        console.log(cart);  // For testing purposes
+    }
 
-// Attach addToCart function to each "Add to Cart" button
-document.querySelectorAll('button').forEach((button, index) => {
-    button.addEventListener('click', () => {
-        const pizzaName = button.parentElement.querySelector('h3').innerText;
-        addToCart(pizzaName);
+    // Attach addToCart function to each "Add to Cart" button
+    document.querySelectorAll('.add-to-cart').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const itemName = button.parentElement.querySelector('h3').innerText;
+            addToCart(itemName);
+        });
     });
 });
+
+
 
 
 // product add to card information part //
